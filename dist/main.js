@@ -1,1 +1,1 @@
-(()=>{"use strict";({log(o){console.log(o.toUpperCase())}}).log("Hello modules")})();
+(()=>{"use strict";console.log("hello something")})();

@@ -1,7 +1,23 @@
-import Logger from './module.js';
+console.log("hello something");
 
-Logger.log('Hello modules');
+//require('./style.css');
+import './style.scss';
 
-const Logger2 = require('./module2.js');
+import Vue from 'vue/dist/vue.common.dev';
 
-Logger2.log2('Hello require');
+new Vue({
+    el: '#app',
+    data: {
+        message: ''
+    }
+});
+
+document.querySelector('#input').addEventListener('input', function(event){
+    document.querySelector('#paragraph').innerHTML = event.target.value;
+});
+
+    
+document.querySelector('#button').addEventListener('click', function(){
+    document.querySelector('#input').value = '';
+    document.querySelector('#paragraph').innerHTML = '';
+});
