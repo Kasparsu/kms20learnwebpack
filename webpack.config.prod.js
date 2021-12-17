@@ -10,7 +10,7 @@ const PATHS = {
 }
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -59,9 +59,9 @@ module.exports = {
             template: './src/about.html'
         }),
         new MiniCssExtractPlugin(),
-        // new PurgecssPlugin({
-        //     paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
-        // }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+        }),
         new VueLoaderPlugin()
     ],
 };
